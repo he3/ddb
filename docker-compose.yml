@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  SQLServer:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    env_file:
+      - sqlserver.env
+      - sapassword.env
+    ports:
+      - '1433:1433'
+    volumes:
+      - .\v\mssql\data:/var/opt/mssql/data
